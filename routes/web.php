@@ -37,7 +37,7 @@ Route::middleware(['auth', RoleMiddleware::class . ':admin'])->group(function ()
     Route::match(['get', 'post'], '/users', [UserController::class, 'handle'])->name('users');
     Route::put('/users/{user}', [UserController::class, 'handle'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'handle'])->name('users.delete');
-    
+
     Route::match(['get', 'post'], '/items', [ItemController::class, 'handle'])->name('items');
     Route::put('/items/{item}', [ItemController::class, 'handle'])->name('items.update');
     Route::delete('/items/{item}', [ItemController::class, 'handle'])->name('items.delete');
