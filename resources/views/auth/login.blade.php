@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    
+
     <link rel="icon" type="image/png" href="{{ asset('assets/img/Avatar.png') }}">
 
     <!-- Flowbite -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-    {{-- Link Laraval --}}
-    <link href="{{ mix('resources/css/app.css') }}" rel="stylesheet">
+    {{-- Link Laravel --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- <link href="{{ mix('resources/css/app.css') }}" rel="stylesheet"> --}}
 </head>
 <body>
     <section class="bg-gray-50 dark:bg-gray-900">
@@ -57,7 +58,7 @@
         </div>
     </section>
 
-    
+
     @if (session('success'))
         <div id="alert-3" class="fixed top-4 right-4 z-50 flex items-center p-4 mb-4 text-green-800 rounded-lg bg-green-50" role="alert">
             <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -104,7 +105,7 @@
     @endif
 
     <script>
-        
+
         function showAlert() {
             const alert = document.getElementById('alert-3');
             alert.style.display = 'flex';
